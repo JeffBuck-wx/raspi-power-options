@@ -81,8 +81,8 @@ else
 fi
 
 # set LED power settings
-toggle_power led0 $pwr
-toggle_power led1 $act
+toggle_power led0 $act
+toggle_power led1 $pwr
 
 grep "/sys/class/leds" $target_file
 
