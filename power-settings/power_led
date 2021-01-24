@@ -12,7 +12,7 @@ target_file=/etc/rc.local
 
 # functions
 function show_help {
-  echo "Usage:    power_leds <option> <ON|OFF>"
+  echo "Usage:    power_led <option> <ON|OFF>"
   echo "Options:  --pwr/-p  --  Power LED         (led0)" 
   echo "          --act/-a  --  Activity LED      (led1)" 
   echo "          --both/-b --  Both pwr/act LEDs (led0/led1)"
