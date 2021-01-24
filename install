@@ -6,14 +6,17 @@ then
     exit 1
 fi
 
+# make a copy in /tmp
+cp -r ./power-settings /tmp
+
 # move scripts to /usr/local/bin
 dest=/usr/local/bin
 for src in power_hdmi power_led power_usb
 do
   echo "Moving $src"
-  echo "mv ./power-settings/$src $dest/$src"
+  mv /tmp/power-settings/$src $dest/$src
 done
 
 # remove dir
-#rm -fr ./power-settings
+rm -fr /tmp/power-settings
 
