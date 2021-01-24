@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+if [ "$(whoami)" != "root" ]
+then
+    echo "You do NOT have permission to run $0 as non-root user."
+    exit 1
+fi
+
+# make a copy in /tmp
+cp -r ./power-settings /tmp
+
+# move scripts to /usr/local/bin
+dest=/usr/local/bin
+for src in power_hdmi power_led power_usb
+do
+  echo "Moving $src"
+  mv /tmp/power-settings/$src $dest/$src
+done
+
+# remove dir
+rm -fr /tmp/power-settings
+
